@@ -11,6 +11,9 @@ const VALID_NAME = 'elroi macharm';
 const VALID_PASS = 'dontcheatinchess';
 const VALID_PIN = 'eloi is goat';
 
+// Initialize state: Hide dashboard explicitly
+dashboard.style.display = 'none';
+
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
@@ -19,17 +22,17 @@ loginForm.addEventListener('submit', (e) => {
     const pinInput = document.getElementById('pin').value;
 
     if (nameInput === VALID_NAME && passInput === VALID_PASS && pinInput === VALID_PIN) {
-        showSuccess('Access Granted. Entering Studio...');
+        showSuccess('Verification Successful. Loading Main Site Metrics...');
         setTimeout(() => {
             enterDashboard();
-        }, 1500);
+        }, 1200);
     } else {
-        showError('Invalid credentials. Please try again.');
+        showError('Verification Failed. Check credentials.');
     }
 });
 
 logoutBtn.addEventListener('click', () => {
-    location.reload(); // Simple logout
+    location.reload();
 });
 
 function enterDashboard() {
@@ -37,27 +40,43 @@ function enterDashboard() {
     dashboard.style.display = 'block';
     document.body.classList.add('logged-in');
     
-    // Trigger animations for dashboard elements
-    const cards = document.querySelectorAll('.stat-card, .glass-card');
-    cards.forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        setTimeout(() => {
-            card.style.transition = 'all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1)';
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-        }, 100 * index);
+    // Smooth entrance
+    dashboard.style.opacity = '0';
+    dashboard.style.transform = 'translateY(30px)';
+    
+    requestAnimationFrame(() => {
+        dashboard.style.transition = 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
+        dashboard.style.opacity = '1';
+        dashboard.style.transform = 'translateY(0)';
     });
+
+    // Animate stats
+    animateValue('player-count', 0, 1428, 2000);
+    animateValue('active-matches', 0, 84, 2500);
+}
+
+function animateValue(id, start, end, duration) {
+    const obj = document.getElementById(id);
+    if (!obj) return;
+    let startTimestamp = null;
+    const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        obj.innerHTML = Math.floor(progress * (end - start) + start).toLocaleString();
+        if (progress < 1) {
+            window.requestAnimationFrame(step);
+        }
+    };
+    window.requestAnimationFrame(step);
 }
 
 function showError(msg) {
     loginMessage.textContent = msg;
     loginMessage.className = 'message error';
     
-    // Shake animation
     const card = loginForm.parentElement;
     card.style.animation = 'none';
-    card.offsetHeight; // trigger reflow
+    card.offsetHeight;
     card.style.animation = 'shake 0.5s ease-in-out';
 }
 
@@ -66,17 +85,15 @@ function showSuccess(msg) {
     loginMessage.className = 'message success';
 }
 
-// Add shake animation to CSS dynamically or via style.css
+// Add shake animation
 const style = document.createElement('style');
 style.textContent = `
 @keyframes shake {
     0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-10px); }
-    75% { transform: translateX(10px); }
+    20% { transform: translateX(-15px); }
+    40% { transform: translateX(15px); }
+    60% { transform: translateX(-10px); }
+    80% { transform: translateX(10px); }
 }
 `;
 document.head.appendChild(style);
-
-// Check if already logged in (optional persistence)
-// For this demo, we'll just start at login.
-console.log('Chess for Creators logic initialized.');
