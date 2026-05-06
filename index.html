@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/src/style.css">
     <style>
         #dashboard { display: none; }
-        body { background-color: #0a0a0c; color: white; margin: 0; padding: 0; }
+        body { background-color: #050507; color: white; margin: 0; padding: 0; }
     </style>
 </head>
 <body>
@@ -21,27 +21,27 @@
     <div id="login-screen" class="container">
         <div class="glass-card">
             <div class="header">
-                <h1>Chess for Creators</h1>
-                <p>Security Verification Required</p>
+                <h1>STUDIO ACCESS</h1>
+                <p>Identity Verification Required</p>
             </div>
             
             <form id="login-form">
                 <div class="form-group">
-                    <label for="username">Name</label>
-                    <input type="text" id="username" placeholder="Enter your full name" required autocomplete="name">
+                    <label for="username">CREATOR NAME</label>
+                    <input type="text" id="username" placeholder="---" required autocomplete="name">
                 </div>
                 
                 <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="Enter security password" required autocomplete="current-password">
+                    <label for="password">SECURITY PASSWORD</label>
+                    <input type="password" id="password" placeholder="---" required autocomplete="current-password">
                 </div>
 
                 <div class="form-group">
-                    <label for="pin">Personal PIN</label>
-                    <input type="password" id="pin" placeholder="Enter personal PIN" required>
+                    <label for="pin">PERSONAL PIN</label>
+                    <input type="password" id="pin" placeholder="---" required>
                 </div>
 
-                <button type="submit" class="btn">Login to Studio</button>
+                <button type="submit" class="btn">ENTER STUDIO</button>
                 <div id="login-message" class="message"></div>
             </form>
         </div>
@@ -51,54 +51,51 @@
     <div id="dashboard" class="container" style="display: none;">
         <div class="dashboard-header">
             <div>
-                <h1>CREATOR STUDIO</h1>
-                <p style="color: var(--text-secondary); font-size: 1.8rem; margin-top: 1rem;">Network: <a href="https://iamhimhehe2-cyber.github.io/" target="_blank" style="color: var(--accent-gold); text-decoration: none;">iamhimhehe2-cyber.github.io</a></p>
+                <h1 style="font-weight: 800; letter-spacing: -4px;">CREATOR STUDIO</h1>
+                <p style="color: var(--text-secondary); font-size: 2rem; margin-top: 1rem;">NETWORK: <a href="https://iamhimhehe2-cyber.github.io/" target="_blank" style="color: var(--accent-gold); text-decoration: none;">IAMHIMHEHE2-CYBER</a></p>
             </div>
             <div class="user-info">
                 <div class="avatar">EM</div>
-                <button id="logout-btn" class="btn" style="width: auto; padding: 1rem 2rem; font-size: 1.2rem; margin-top: 0;">Logout</button>
+                <button id="logout-btn" class="btn" style="width: auto; padding: 1.5rem 3rem; font-size: 1.5rem; margin-top: 0;">LOGOUT</button>
             </div>
         </div>
 
         <div class="grid">
             <div class="stat-card">
-                <h3>Live Player Count</h3>
+                <h3>LIVE PLAYERS</h3>
                 <div class="value" id="player-count">0</div>
             </div>
             <div class="stat-card">
-                <h3>Active Matches</h3>
+                <h3>MATCHES</h3>
                 <div class="value" id="active-matches">0</div>
             </div>
             <div class="stat-card">
-                <h3>System Status</h3>
-                <div class="value" style="font-size: 4rem;">ONLINE</div>
+                <h3>STATUS</h3>
+                <div class="value" style="font-size: 5rem;">ACTIVE</div>
             </div>
         </div>
 
-        <div class="grid" style="margin-top: 4rem;">
-            <div class="glass-card" style="padding: 4rem; grid-column: span 2;">
-                <h2 style="font-size: 3rem; margin-bottom: 2.5rem; border-bottom: 3px solid var(--glass-border); padding-bottom: 1.5rem;">Infrastructure Management</h2>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;">
+        <div class="grid" style="margin-top: 5rem;">
+            <div class="glass-card" style="padding: 5rem; grid-column: span 2;">
+                <h2 style="font-size: 3.5rem; margin-bottom: 3rem; border-bottom: 4px solid var(--glass-border); padding-bottom: 2rem;">SYSTEM CONTROL</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;">
                     <div>
-                        <h4 style="color: var(--accent-gold); font-size: 1.8rem; margin-bottom: 1.5rem;">Main Node</h4>
-                        <p style="color: var(--text-secondary); font-size: 1.4rem; margin-bottom: 1rem;">Status: 🟢 Secure</p>
-                        <p style="color: var(--text-secondary); font-size: 1.4rem; margin-bottom: 1.5rem;">Traffic: Optimized</p>
-                        <button class="btn" style="padding: 1rem; font-size: 1.2rem;">Refresh Sync</button>
+                        <h4 style="color: var(--accent-gold); font-size: 2.2rem; margin-bottom: 2rem;">CORE NODE</h4>
+                        <p style="color: var(--text-secondary); font-size: 1.8rem; margin-bottom: 1.5rem;">STATUS: 🟢 SECURE</p>
+                        <button class="btn" style="padding: 1.5rem; font-size: 1.5rem;">REFRESH DATA</button>
                     </div>
                     <div>
-                        <h4 style="color: var(--accent-gold); font-size: 1.8rem; margin-bottom: 1.5rem;">Tools</h4>
-                        <ul style="list-style: none; color: var(--text-secondary); font-size: 1.4rem;">
-                            <li style="margin-bottom: 1rem;">• Update Global Rankings</li>
-                            <li style="margin-bottom: 1rem;">• Manage User Database</li>
-                            <li style="margin-bottom: 1rem;">• Network Announcement</li>
+                        <h4 style="color: var(--accent-gold); font-size: 2.2rem; margin-bottom: 2rem;">COMMANDS</h4>
+                        <ul style="list-style: none; color: var(--text-secondary); font-size: 1.8rem;">
+                            <li style="margin-bottom: 1.5rem;">• GLOBAL UPDATE</li>
+                            <li style="margin-bottom: 1.5rem;">• CLEAR CACHE</li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="glass-card" style="padding: 4rem; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Broadcast</h2>
-                <p style="color: var(--text-secondary); font-size: 1.5rem; margin-bottom: 3rem;">Start streaming directly to the main network.</p>
-                <button class="btn" style="background: linear-gradient(135deg, #ff416c, #ff4b2b); color: white; padding: 2rem; font-size: 2rem;">Go Live</button>
+            <div class="glass-card" style="padding: 5rem; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                <h2 style="font-size: 3rem; margin-bottom: 2.5rem;">BROADCAST</h2>
+                <button class="btn" style="background: linear-gradient(135deg, #ff416c, #ff4b2b); color: white; padding: 2.5rem; font-size: 2.5rem;">GO LIVE</button>
             </div>
         </div>
     </div>
