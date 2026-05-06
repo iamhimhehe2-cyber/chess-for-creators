@@ -11,48 +11,61 @@ const VALID_NAME = 'elroi macharm';
 const VALID_PASS = 'dontcheatinchess';
 const VALID_PIN = 'eloi is goat';
 
-// Initialize state: Hide dashboard explicitly
-dashboard.style.display = 'none';
+// Ensure dashboard is hidden initially
+if (dashboard) dashboard.style.display = 'none';
 
-loginForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const nameInput = document.getElementById('username').value.toLowerCase().trim();
-    const passInput = document.getElementById('password').value;
-    const pinInput = document.getElementById('pin').value;
+if (loginForm) {
+    loginForm.addEventListener('submit', (e) => {
+        // CRITICAL: Prevent form submission and page reload
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const nameInput = document.getElementById('username').value.toLowerCase().trim();
+        const passInput = document.getElementById('password').value;
+        const pinInput = document.getElementById('pin').value;
 
-    if (nameInput === VALID_NAME && passInput === VALID_PASS && pinInput === VALID_PIN) {
-        showSuccess('Verification Successful. Loading Main Site Metrics...');
-        setTimeout(() => {
-            enterDashboard();
-        }, 1200);
-    } else {
-        showError('Verification Failed. Check credentials.');
-    }
-});
+        console.log('Attempting login...');
 
-logoutBtn.addEventListener('click', () => {
-    location.reload();
-});
+        if (nameInput === VALID_NAME && passInput === VALID_PASS && pinInput === VALID_PIN) {
+            showSuccess('ACCESS GRANTED');
+            setTimeout(() => {
+                enterDashboard();
+            }, 800);
+        } else {
+            showError('IDENTITY NOT VERIFIED');
+        }
+        
+        return false;
+    });
+}
+
+if (logoutBtn) {
+    logoutBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        location.reload();
+    });
+}
 
 function enterDashboard() {
+    if (!loginScreen || !dashboard) return;
+    
     loginScreen.style.display = 'none';
     dashboard.style.display = 'block';
     document.body.classList.add('logged-in');
     
     // Smooth entrance
     dashboard.style.opacity = '0';
-    dashboard.style.transform = 'translateY(30px)';
+    dashboard.style.transform = 'translateY(50px)';
     
     requestAnimationFrame(() => {
-        dashboard.style.transition = 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
+        dashboard.style.transition = 'all 1s cubic-bezier(0.16, 1, 0.3, 1)';
         dashboard.style.opacity = '1';
         dashboard.style.transform = 'translateY(0)';
     });
 
     // Animate stats
-    animateValue('player-count', 0, 1428, 2000);
-    animateValue('active-matches', 0, 84, 2500);
+    animateValue('player-count', 0, 1428, 2500);
+    animateValue('active-matches', 0, 84, 3000);
 }
 
 function animateValue(id, start, end, duration) {
@@ -74,10 +87,12 @@ function showError(msg) {
     loginMessage.textContent = msg;
     loginMessage.className = 'message error';
     
-    const card = loginForm.parentElement;
-    card.style.animation = 'none';
-    card.offsetHeight;
-    card.style.animation = 'shake 0.5s ease-in-out';
+    const card = document.querySelector('.glass-card');
+    if (card) {
+        card.style.animation = 'none';
+        card.offsetHeight;
+        card.style.animation = 'shake 0.5s ease-in-out';
+    }
 }
 
 function showSuccess(msg) {
@@ -90,10 +105,12 @@ const style = document.createElement('style');
 style.textContent = `
 @keyframes shake {
     0%, 100% { transform: translateX(0); }
-    20% { transform: translateX(-15px); }
-    40% { transform: translateX(15px); }
-    60% { transform: translateX(-10px); }
-    80% { transform: translateX(10px); }
+    20% { transform: translateX(-20px); }
+    40% { transform: translateX(20px); }
+    60% { transform: translateX(-15px); }
+    80% { transform: translateX(15px); }
 }
 `;
 document.head.appendChild(style);
+
+console.log('Creator Studio Logic Ready.');
