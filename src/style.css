@@ -2,15 +2,18 @@
 
 :root {
     --bg-color: #0a0a0c;
-    --card-bg: rgba(255, 255, 255, 0.05);
+    --card-bg: rgba(255, 255, 255, 0.06);
     --accent-gold: #ffcc33;
     --accent-purple: #8a2be2;
     --text-primary: #ffffff;
-    --text-secondary: rgba(255, 255, 255, 0.85);
-    --glass-border: rgba(255, 255, 255, 0.15);
+    --text-secondary: rgba(255, 255, 255, 0.9);
+    --glass-border: rgba(255, 255, 255, 0.2);
     --error-color: #ff4d4d;
     --success-color: #4caf50;
     --font-main: 'Outfit', sans-serif;
+    
+    /* Base font size increased */
+    font-size: 20px; 
 }
 
 * {
@@ -28,7 +31,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    line-height: 1.6;
+    line-height: 1.4;
 }
 
 /* Background gradient blobs */
@@ -44,211 +47,192 @@ body {
 
 .blob {
     position: absolute;
-    width: 60vw;
-    height: 60vw;
+    width: 70vw;
+    height: 70vw;
     background: radial-gradient(circle, var(--accent-purple) 0%, transparent 70%);
-    opacity: 0.3;
-    filter: blur(100px);
+    opacity: 0.35;
+    filter: blur(120px);
     border-radius: 50%;
-    animation: move 25s infinite alternate;
+    animation: move 30s infinite alternate;
 }
 
-.blob-1 { top: -20%; left: -10%; }
-.blob-2 { bottom: -20%; right: -10%; background: radial-gradient(circle, var(--accent-gold) 0%, transparent 70%); }
+.blob-1 { top: -25%; left: -15%; }
+.blob-2 { bottom: -25%; right: -15%; background: radial-gradient(circle, var(--accent-gold) 0%, transparent 70%); }
 
 @keyframes move {
     from { transform: translate(0, 0) scale(1); }
-    to { transform: translate(50px, 50px) scale(1.1); }
+    to { transform: translate(100px, 100px) scale(1.2); }
 }
 
 /* Container */
 .container {
-    width: 100%;
-    max-width: 1200px;
-    padding: 2.5rem;
+    width: 95%;
+    max-width: 1400px;
+    padding: 3rem;
     z-index: 10;
     margin: 0 auto;
 }
 
 #login-screen {
-    max-width: 550px;
+    max-width: 700px; /* Wider for bigger fonts */
 }
 
 .glass-card {
     background: var(--card-bg);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-    border: 1px solid var(--glass-border);
-    border-radius: 32px;
-    padding: 4rem 3.5rem;
-    box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.7);
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.glass-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 2px solid var(--glass-border);
+    border-radius: 40px;
+    padding: 5rem 4rem;
+    box-shadow: 0 50px 120px -30px rgba(0, 0, 0, 0.8);
 }
 
 .header {
     text-align: center;
-    margin-bottom: 3.5rem;
+    margin-bottom: 4rem;
 }
 
 .header h1 {
-    font-size: 3.5rem;
+    font-size: 5rem; /* Massive heading */
     font-weight: 800;
-    background: linear-gradient(135deg, #fff 20%, var(--accent-gold) 100%);
+    background: linear-gradient(135deg, #fff 10%, var(--accent-gold) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 1rem;
-    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+    letter-spacing: -3px;
+    line-height: 0.9;
 }
 
 .header p {
     color: var(--text-secondary);
-    font-size: 1.25rem;
-    font-weight: 300;
+    font-size: 1.8rem; /* Large subtext */
+    font-weight: 400;
 }
 
 /* Forms */
 .form-group {
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 0.75rem;
-    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-size: 1.4rem; /* Larger labels */
     font-weight: 600;
     color: var(--text-secondary);
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 
 input {
     width: 100%;
-    padding: 1.25rem 1.5rem;
-    background: rgba(255, 255, 255, 0.08);
-    border: 2px solid var(--glass-border);
-    border-radius: 16px;
+    padding: 1.5rem 2rem; /* Massive padding */
+    background: rgba(255, 255, 255, 0.1);
+    border: 3px solid var(--glass-border);
+    border-radius: 20px;
     color: white;
     font-family: inherit;
-    font-size: 1.2rem;
-    transition: all 0.3s ease;
+    font-size: 1.8rem; /* Massive input text */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 input:focus {
     outline: none;
     border-color: var(--accent-gold);
-    background: rgba(255, 255, 255, 0.12);
-    box-shadow: 0 0 0 5px rgba(255, 204, 51, 0.15);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 0 8px rgba(255, 204, 51, 0.2);
+    transform: translateY(-2px);
 }
 
 .btn {
     width: 100%;
-    padding: 1.25rem;
+    padding: 1.8rem;
     background: linear-gradient(135deg, var(--accent-gold) 0%, #ffae00 100%);
     border: none;
-    border-radius: 16px;
+    border-radius: 20px;
     color: #000;
     font-weight: 800;
-    font-size: 1.2rem;
+    font-size: 2rem; /* Massive button text */
     cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    margin-top: 1.5rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin-top: 2rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
 }
 
 .btn:hover {
-    transform: scale(1.03);
-    box-shadow: 0 15px 30px -10px rgba(255, 204, 51, 0.5);
-    filter: brightness(1.1);
-}
-
-.btn:active {
-    transform: scale(0.97);
+    transform: scale(1.04);
+    box-shadow: 0 20px 40px -10px rgba(255, 204, 51, 0.6);
+    filter: brightness(1.15);
 }
 
 /* Dashboard Styles */
 #dashboard {
-    width: 95%;
-    max-width: 1400px;
+    width: 98%;
 }
 
 .dashboard-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 4rem;
-    padding: 0 1rem;
+    margin-bottom: 5rem;
 }
 
 .dashboard-header h1 {
-    font-size: 4rem;
+    font-size: 6rem; /* Huge Studio Title */
     font-weight: 800;
+    letter-spacing: -4px;
 }
 
 .user-info {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 .avatar {
-    width: 70px;
-    height: 70px;
-    border-radius: 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 25px;
     background: linear-gradient(135deg, var(--accent-purple), var(--accent-gold));
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: 800;
-    font-size: 1.8rem;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    font-size: 2.5rem;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 3rem;
 }
 
 .stat-card {
     background: var(--card-bg);
-    padding: 3rem 2.5rem;
-    border-radius: 28px;
-    border: 1px solid var(--glass-border);
-    transition: all 0.3s ease;
-}
-
-.stat-card:hover {
-    background: rgba(255, 255, 255, 0.08);
-    transform: translateY(-5px);
+    padding: 4rem 3.5rem;
+    border-radius: 35px;
+    border: 2px solid var(--glass-border);
 }
 
 .stat-card h3 {
     color: var(--text-secondary);
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
 }
 
 .stat-card .value {
-    font-size: 4rem;
+    font-size: 6rem; /* Huge stats */
     font-weight: 800;
     color: var(--accent-gold);
-    line-height: 1;
+    line-height: 0.8;
 }
 
 /* Message Styles */
 .message {
-    margin-top: 1.5rem;
+    margin-top: 2rem;
     text-align: center;
-    font-size: 1.1rem;
-    min-height: 1.5rem;
+    font-size: 1.5rem;
     font-weight: 600;
 }
 
@@ -257,11 +241,11 @@ input:focus {
 
 body.logged-in {
     align-items: flex-start;
-    padding: 4rem 2rem;
+    padding: 5rem 3rem;
 }
 
-@media (max-width: 768px) {
-    .header h1 { font-size: 2.5rem; }
-    .dashboard-header { flex-direction: column; text-align: center; gap: 2rem; }
-    .glass-card { padding: 2.5rem 2rem; }
+@media (max-width: 1024px) {
+    .header h1 { font-size: 3.5rem; }
+    .dashboard-header h1 { font-size: 4rem; }
+    .stat-card .value { font-size: 4.5rem; }
 }

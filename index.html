@@ -22,23 +22,23 @@
         <div class="glass-card">
             <div class="header">
                 <h1>Chess for Creators</h1>
-                <p>Verify your identity to access the Studio</p>
+                <p>Security Verification Required</p>
             </div>
             
             <form id="login-form">
                 <div class="form-group">
                     <label for="username">Name</label>
-                    <input type="text" id="username" placeholder="elroi macharm" required autocomplete="name">
+                    <input type="text" id="username" placeholder="Enter your full name" required autocomplete="name">
                 </div>
                 
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="dontcheatinchess" required autocomplete="current-password">
+                    <input type="password" id="password" placeholder="Enter security password" required autocomplete="current-password">
                 </div>
 
                 <div class="form-group">
                     <label for="pin">Personal PIN</label>
-                    <input type="password" id="pin" placeholder="eloi is goat" required>
+                    <input type="password" id="pin" placeholder="Enter personal PIN" required>
                 </div>
 
                 <button type="submit" class="btn">Login to Studio</button>
@@ -51,12 +51,12 @@
     <div id="dashboard" class="container" style="display: none;">
         <div class="dashboard-header">
             <div>
-                <h1 style="font-size: 3.5rem; font-weight: 800; letter-spacing: -2px;">CREATOR STUDIO</h1>
-                <p style="color: var(--text-secondary); font-size: 1.2rem;">Connected to: <a href="https://iamhimhehe2-cyber.github.io/" target="_blank" style="color: var(--accent-gold); text-decoration: none;">iamhimhehe2-cyber.github.io</a></p>
+                <h1>CREATOR STUDIO</h1>
+                <p style="color: var(--text-secondary); font-size: 1.8rem; margin-top: 1rem;">Network: <a href="https://iamhimhehe2-cyber.github.io/" target="_blank" style="color: var(--accent-gold); text-decoration: none;">iamhimhehe2-cyber.github.io</a></p>
             </div>
             <div class="user-info">
                 <div class="avatar">EM</div>
-                <button id="logout-btn" class="btn" style="width: auto; padding: 0.75rem 1.5rem; font-size: 0.9rem; margin-top: 0;">Logout</button>
+                <button id="logout-btn" class="btn" style="width: auto; padding: 1rem 2rem; font-size: 1.2rem; margin-top: 0;">Logout</button>
             </div>
         </div>
 
@@ -70,35 +70,35 @@
                 <div class="value" id="active-matches">0</div>
             </div>
             <div class="stat-card">
-                <h3>Server Latency</h3>
-                <div class="value">24ms</div>
+                <h3>System Status</h3>
+                <div class="value" style="font-size: 4rem;">ONLINE</div>
             </div>
         </div>
 
-        <div class="grid" style="margin-top: 3rem;">
-            <div class="glass-card" style="padding: 3rem; grid-column: span 2;">
-                <h2 style="font-size: 2.2rem; margin-bottom: 2rem; border-bottom: 2px solid var(--glass-border); padding-bottom: 1rem;">Main Website Management</h2>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+        <div class="grid" style="margin-top: 4rem;">
+            <div class="glass-card" style="padding: 4rem; grid-column: span 2;">
+                <h2 style="font-size: 3rem; margin-bottom: 2.5rem; border-bottom: 3px solid var(--glass-border); padding-bottom: 1.5rem;">Infrastructure Management</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;">
                     <div>
-                        <h4 style="color: var(--accent-gold); margin-bottom: 1rem;">Network Status</h4>
-                        <p style="color: var(--text-secondary); margin-bottom: 1rem;">Main Node: 🟢 Operational</p>
-                        <p style="color: var(--text-secondary); margin-bottom: 1rem;">CDN Cache: 🟢 Synchronized</p>
-                        <button class="btn" style="padding: 0.8rem; font-size: 0.9rem;">Refresh System</button>
+                        <h4 style="color: var(--accent-gold); font-size: 1.8rem; margin-bottom: 1.5rem;">Main Node</h4>
+                        <p style="color: var(--text-secondary); font-size: 1.4rem; margin-bottom: 1rem;">Status: 🟢 Secure</p>
+                        <p style="color: var(--text-secondary); font-size: 1.4rem; margin-bottom: 1.5rem;">Traffic: Optimized</p>
+                        <button class="btn" style="padding: 1rem; font-size: 1.2rem;">Refresh Sync</button>
                     </div>
                     <div>
-                        <h4 style="color: var(--accent-gold); margin-bottom: 1rem;">Quick Actions</h4>
-                        <ul style="list-style: none; color: var(--text-secondary);">
-                            <li style="margin-bottom: 0.5rem;">• Update Leaderboards</li>
-                            <li style="margin-bottom: 0.5rem;">• Clear Cache</li>
-                            <li style="margin-bottom: 0.5rem;">• Global Announcement</li>
+                        <h4 style="color: var(--accent-gold); font-size: 1.8rem; margin-bottom: 1.5rem;">Tools</h4>
+                        <ul style="list-style: none; color: var(--text-secondary); font-size: 1.4rem;">
+                            <li style="margin-bottom: 1rem;">• Update Global Rankings</li>
+                            <li style="margin-bottom: 1rem;">• Manage User Database</li>
+                            <li style="margin-bottom: 1rem;">• Network Announcement</li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="glass-card" style="padding: 3rem; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                <h2 style="font-size: 2rem; margin-bottom: 1.5rem;">Go Live</h2>
-                <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 2rem;">Broadcast your studio session to the main website.</p>
-                <button class="btn" style="background: linear-gradient(135deg, #ff416c, #ff4b2b); color: white; padding: 1.5rem;">Start Live Broadcast</button>
+            <div class="glass-card" style="padding: 4rem; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Broadcast</h2>
+                <p style="color: var(--text-secondary); font-size: 1.5rem; margin-bottom: 3rem;">Start streaming directly to the main network.</p>
+                <button class="btn" style="background: linear-gradient(135deg, #ff416c, #ff4b2b); color: white; padding: 2rem; font-size: 2rem;">Go Live</button>
             </div>
         </div>
     </div>
