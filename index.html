@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess for Creators | Elroi Macharm</title>
+    <meta name="description" content="Exclusive portal for elite chess creators. Manage content, analyze growth, and connect.">
+</head>
+<body>
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <!-- Login Screen -->
+    <div id="login-screen" class="container">
+        <div class="glass-card">
+            <div class="header">
+                <h1>Chess for Creators</h1>
+                <p>Welcome back, Grandmaster</p>
+            </div>
+            
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Creator Name</label>
+                    <input type="text" id="username" placeholder="Enter your name" required autocomplete="name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Security Password</label>
+                    <input type="password" id="password" placeholder="••••••••" required autocomplete="current-password">
+                </div>
+
+                <div class="form-group">
+                    <label for="pin">Personal PIN</label>
+                    <input type="password" id="pin" placeholder="••••••••" required>
+                </div>
+
+                <button type="submit" class="btn">Enter Studio</button>
+                <div id="login-message" class="message"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Dashboard Screen -->
+    <div id="dashboard" class="container">
+        <div class="dashboard-header">
+            <div>
+                <h1 style="font-size: 2.5rem; font-weight: 800;">Creator Studio</h1>
+                <p style="color: var(--text-secondary);">Welcome, Elroi Macharm</p>
+            </div>
+            <div class="user-info">
+                <div class="avatar">EM</div>
+                <button id="logout-btn" class="btn" style="width: auto; padding: 0.5rem 1rem; font-size: 0.8rem; margin-top: 0;">Logout</button>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="stat-card">
+                <h3>Total Students</h3>
+                <div class="value">12,842</div>
+            </div>
+            <div class="stat-card">
+                <h3>Course Revenue</h3>
+                <div class="value">$45,210</div>
+            </div>
+            <div class="stat-card">
+                <h3>Global Rank</h3>
+                <div class="value">#1</div>
+            </div>
+        </div>
+
+        <div class="grid" style="margin-top: 2rem;">
+            <div class="glass-card" style="padding: 2rem;">
+                <h2 style="margin-bottom: 1.5rem;">Recent Content</h2>
+                <ul style="list-style: none; color: var(--text-secondary);">
+                    <li style="padding: 1rem 0; border-bottom: 1px solid var(--glass-border); display: flex; justify-content: space-between;">
+                        <span>Advanced Sicilian Defense Guide</span>
+                        <span style="color: var(--accent-gold);">Published</span>
+                    </li>
+                    <li style="padding: 1rem 0; border-bottom: 1px solid var(--glass-border); display: flex; justify-content: space-between;">
+                        <span>Endgame Mastery: Rook vs Pawns</span>
+                        <span style="color: var(--accent-gold);">Published</span>
+                    </li>
+                    <li style="padding: 1rem 0; display: flex; justify-content: space-between;">
+                        <span>Blitz Tactics 101</span>
+                        <span style="color: rgba(255,255,255,0.3);">Draft</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="glass-card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                <h2 style="margin-bottom: 1rem;">Go Live</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Start your streaming session directly from the studio.</p>
+                <button class="btn" style="background: linear-gradient(135deg, #ff416c, #ff4b2b); color: white;">Start Broadcast</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>
